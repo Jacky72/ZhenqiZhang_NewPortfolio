@@ -29,7 +29,7 @@ const navLinks = [
     },
     {
         title: "Projects",
-        path: "/projects",
+        path: "/project",
     },
     {
         title: "Contact",
