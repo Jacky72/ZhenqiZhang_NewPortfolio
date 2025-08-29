@@ -1,0 +1,120 @@
+"use client";
+import React, {useTransition, useState} from 'react';
+import Link from 'next/link';
+import Footer from '../components/footer/footer';
+import Image from 'next/image';
+
+const experienceData = [
+    {
+        id:1,
+        title: "AICode Australia",
+        description: "Programming Robot and Drone Teacher, Teaching Instructor",
+        image: "/Exp01.png",
+        time: "Sep 2021 - Nov 2022",
+        tag: ["Teaching", "AI Programming"],
+        previewUrl: "https://www.aicodeaustralia.com.au/",
+        short: "Taught robotics and drone programming using AI and computer vision."
+    },
+    {
+        id:2,
+        title: "Junior Engineer",
+        description: "Programming Teacher for after school lessons, Teaching Instructor",
+        image: "/Exp02.png",
+        time: "Sep 2021 - June 2022",
+        tag: ["Teaching"],
+        previewUrl: "https://www.juniorengineers.com.au/",
+        short: "Conducted after-school programming lessons for young students."
+    },
+    {
+        id:3,
+        title: "Priority Construction",
+        description: "IT Consulting",
+        image: "/Exp03.png",
+        time: "Jan 2023 - Present",
+        tag: ["IT Consulting"],
+        previewUrl: "https://www.priorityconst.com.au/",
+        short: "Provided IT consulting services for construction projects."
+    },
+    {
+        id:4,
+        title: "Ceejay Engineering",
+        description: "IT Consulting, Data Analysis and Database Management",
+        image: "/Exp04.png",
+        time: "June 2023 - Present",
+        tag: ["IT Consulting", "Data Analysis", "Database Management"],
+        previewUrl: "https://www.ceejayengineering.com.au/",
+        short: "Managed databases and performed data analysis for engineering projects."
+    }
+];
+
+const ExperiencePage = () => {
+
+    const [selectedExp, setSelectedExp] = useState(null);
+
+    return (
+        <section className="min-h-screen bg-[#F4D6B9]">
+            <div className="px-25">
+                <div className="relative min-h-[80px] md:min-h-[110px]"></div>
+                <h1 className="text-black mb-10 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal text-center font-extrabold">Work Experience</h1>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    {experienceData.map((exp) => (
+                        <button
+                            key={exp.id}
+                            onClick={() => setSelectedExp(exp)}
+                            className="block bg-[#f1c9a3] rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-200 cursor-pointer border-2 border-black/10"
+                        >
+                            <h2 className="text-2xl font-bold text-black mb-5">{exp.title}</h2>
+                            <p className="text-black mb-5">{exp.description}</p>
+                            <div className="flex flex-wrap gap-2 mb-5 justify-center">
+                                {exp.tag.map((tag, idx) => (
+                                    <span
+                                        key={idx}
+                                        className="bg-[#F4D6B9] text-black px-3 py-1 rounded-full text-s font-semibold border border-black"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                            <span className="text-sm text-black">{exp.time}</span>
+                        </button>
+                    ))}
+                </div>
+            </div>
+            {selectedExp && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent bg-opacity-50 backdrop-blur-sm">
+                    <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full relative border-2 border-black/50 justify-center text-center">
+                        <button
+                            className="absolute top-2 right-4 text-3xl font-bold text-gray-500 hover:text-black"
+                            onClick={() => setSelectedExp(null)}
+                            aria-label="Close"
+                        >
+                            &times;
+                        </button>
+                        <h2 className="text-2xl font-bold text-black mb-8 underline">{selectedExp.title}</h2>
+                        <Image
+                            src={selectedExp.image}
+                            alt={selectedExp.title}
+                            width={350}
+                            height={200}
+                            className="rounded mb-8 border-2 border-gray-300"
+                        />
+                        <p className="text-gray-700 mb-8">{selectedExp.short}</p>
+                        <a
+                            href={selectedExp.previewUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 underline mb-8 block"
+                        >
+                            Visit Website
+                        </a>
+                        <span className="text-sm text-gray-500">{selectedExp.time}</span>
+                    </div>
+                </div>
+            )}
+            <div className="w-full h-px bg-black mt-7 mb-2"/>
+            <Footer />
+        </section>
+    )
+}
+
+export default ExperiencePage

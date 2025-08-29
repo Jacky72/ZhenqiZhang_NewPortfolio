@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 const StatusSection = () => {
   return (
     <div className="py-8 xl:gap-16 sm:py-16 max-w-5xl mx-auto">
-        <p className="text-black text-2xl text-center heading-font mb-7 font-bold">
+        <p className="text-black text-2xl text-center mb-7 font-bold">
             Current Status
         </p>
         <div className="sm:border-gray-400 border-2 rounded-2xl py-8 px-16 flex flex-col sm:flex-row items-center gap-3 relative">

@@ -99,12 +99,12 @@ const IntroPage = () => {
                 </div>
                 <div id="status"><StatusSection/></div>
                 <div className="w-full h-px bg-black mt-3 mb-10" id="about"/>
-                <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 xl:px-0">
+                <div className="md:grid md:grid-cols-2 gap-8 place-items-center py-8 px-4 xl:gap-16 xl:px-0">
                     <Image src={TAB_DATA.find((t) => t.id === tab).imgurl} width={500} height={500} alt="AboutSection image"/>
                     <div>
-                        <h2 className="text-4xl font-bold text-black mb-6 mt-5 heading-font">About Me</h2>
+                        <h2 className="text-4xl font-bold text-black mb-6 mt-5">About Me</h2>
                         <p className="text-black lg:text-lg body-font">
-                            I am a Computer Science graduate specializing in Machine Learning, Full-Stack Development, Data Science and Software Development. With sufficient skill in Python, Java, Node.js, C, SQL, and system design.
+                            I am a <strong>Computer Science graduate</strong> specializing in Machine Learning, Full-Stack Development, Data Science and Software Development. With sufficient skill in Python, Java, Node.js, C, SQL, and system design.
                             My pervious work experience includes using computer vision and reinforcement learning in robotics and drones (AICode Australia). I have done projects ranging from predictive ML models for BLEVE analysis to full-stack Web App like a Availability Enrolment using React, Express.js, and PostgreSQL.
                             I thrive in Agile teams and value iterative, feedback-driven development. As a mentor to 100+ students, I enjoy creating collaborative, inclusive learning environments. Fluent in English and Mandarin, I bring strong cross-cultural communication and leadership to every project.
                             I&apos;m passionate about building impactful, team-driven solutions while mentoring the next generation of developers.

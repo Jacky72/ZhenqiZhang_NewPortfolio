@@ -17,6 +17,11 @@ const navLinks = [
     {
         title: "More About Me",
         path: "/moreabout",
+        children: [
+            { title: "Coding", path: "/moreabout#coding" },
+            { title: "Photographer", path: "/moreabout#photographer" },
+            { title: "Travel Enthusiast", path: "/moreabout#travel" },
+        ],
     },
     {
         title: "Experience",
@@ -112,10 +117,9 @@ const Navbar = () => {
 
                                     <div
                                     className={`
-                                        absolute left-0 top-full mt-2 w-44 rounded-md border shadow-lg z-50
-                                        transition-all duration-150
+                                        absolute left-0 top-full mt-2 w-44 rounded-md border-2 shadow-lg z-50
+                                        transition-all duration-150 bg-[#F4D6B9] text-black border-gray-400
                                         ${openDropdown === link.title ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-1"}
-                                        ${scrolled ? "bg-white text-[#ac8c04] border-black/3": "bg-[#141312] text-white border-white/10"}
                                     `}
                                     >
                                     {link.children.map((child) => (
