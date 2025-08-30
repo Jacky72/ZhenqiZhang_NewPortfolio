@@ -93,7 +93,7 @@ const ExperiencePage = () => {
             </div>
             {selectedExp && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent bg-opacity-50 backdrop-blur-sm">
-                    <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full md:max-w-2xl relative border-2 border-black/50 justify-center text-center overflow-y-auto max-h-[95vh]">
+                    <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full md:max-w-3xl relative border-2 border-black/50 justify-center text-center overflow-y-auto max-h-[95vh]">
                         <button
                             className="absolute top-2 right-4 text-3xl font-bold text-gray-500 hover:text-black"
                             onClick={() => setSelectedExp(null)}
@@ -107,9 +107,9 @@ const ExperiencePage = () => {
                             alt={selectedExp.title}
                             width={350}
                             height={200}
-                            className="rounded mb-8 border-2 border-gray-300 justify-center mx-auto"
+                            className="rounded mb-12 border-2 border-gray-300 justify-center mx-auto"
                         />
-                        <p className="text-gray-700 mb-8">{selectedExp.short}</p>
+                        <p className="text-gray-700 mb-12 text-center px-15">{selectedExp.short}</p>
                         <a
                             href={selectedExp.previewUrl}
                             target="_blank"
