@@ -8,8 +8,8 @@ const StatusSection = () => {
         <p className="text-black text-2xl text-center mb-7 font-bold">
             Current Status
         </p>
-        <div className="sm:border-gray-400 border-2 rounded-2xl py-8 px-16 flex flex-col sm:flex-row items-center gap-3 relative">
-            <span className="text-black text-2xl body-font bg-clip-text">
+        <div className="border-gray-400 border-2 rounded-2xl py-8 md:px-16 px-10 flex flex-col sm:flex-row items-center gap-3 relative">
+            <span className="text-black md:text-2xl text-md body-font bg-clip-text">
                 <TypeAnimation
                     sequence={[
                         "Part-Time IT Consultant, Part-Time Studying Cert III in Information Technology",

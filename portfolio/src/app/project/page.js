@@ -1,7 +1,5 @@
 "use client";
 import React, {useTransition, useState} from 'react';
-import Link from 'next/link';
-import Footer from '../components/footer/footer';
 import Image from 'next/image';
 
 const projectData = [
@@ -92,8 +90,8 @@ const ProjectsPage = () => {
         <section className="min-h-screen bg-[#F4D6B9]">
             <div className="px-25">
                 <div className="relative min-h-[80px] md:min-h-[110px]"></div>
-                <h1 className="text-black mb-10 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal text-center font-extrabold">Projects</h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <h1 className="text-black mt-10 mb-10 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal text-center font-extrabold">Projects</h1>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mt-25 mt-10">
                     {projectData.map((project) => (
                         <button
                             key={project.id}
@@ -119,7 +117,7 @@ const ProjectsPage = () => {
             </div>
             {selectedProject && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent bg-opacity-50 backdrop-blur-sm">
-                <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md md:max-w-2xl lg:max-w-4xl overflow-y-auto max-h-[90vh] relative border-2 border-black/50 justify-center text-center">
+                <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-lg md:max-w-2xl lg:max-w-4xl overflow-y-auto max-h-[90vh] relative border-2 border-black/50 justify-center text-center">
                     <button
                     className="absolute top-2 right-4 text-3xl font-bold text-gray-500 hover:text-black"
                     onClick={() => setSelectedProject(null)}
@@ -135,7 +133,7 @@ const ProjectsPage = () => {
                         height={200}
                         className="rounded mb-8 border-2 border-gray-300 justify-center mx-auto"
                     /> */}
-                    <p className="text-gray-700 mb-8">{selectedProject.short}</p>
+                    <p className="text-gray-700 mb-12 text-center md:px-15 px-5">{selectedProject.short}</p>
                     <a
                         href={selectedProject.previewUrl}
                         target="_blank"
@@ -148,8 +146,7 @@ const ProjectsPage = () => {
                 </div>
                 </div>
             )}
-            <div className="w-full h-px bg-black mt-7 mb-2"/>
-            <Footer />
+            <div className="relative md:min-h-[25px] min-h-[50px]"></div>
         </section>
     )
 }

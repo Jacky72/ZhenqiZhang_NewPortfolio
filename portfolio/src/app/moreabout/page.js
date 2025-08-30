@@ -1,33 +1,32 @@
 "use client";
 import React, {useTransition, useState} from 'react';
 import Link from 'next/link';
-import Footer from '../components/footer/footer';
 import Image from 'next/image';
 
 const MoreAboutPage = () => {
 
     return (
         <section className="min-h-screen bg-[#F4D6B9]">
-            <div className="px-25">
-                <div className="relative min-h-[80px] md:min-h-[110px]"></div>
+            <div className="md:px-25 px-15">
+                <div className="relative min-h-[100px] md:min-h-[120px]"></div>
                 <h1 className="text-black mb-10 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal text-center font-extrabold">Do you want to know more about me?</h1>
-                <div className="mt-15 body-font grid grid-cols-3 text-black text-center text-4xl font-bold gap-4 lg:gap-8 px-10">
-                    <Link href={"#coding"} className="underline-offset-4 hover:underline">
+                <div className="mt-15 body-font grid grid-cols-3 text-black text-center md:text-3xl text-md font-bold gap-6 lg:gap-8 md:px-10">
+                    <Link href={"#coding"} className="underline-offset-4 underline">
                         Coding
                     </Link>
-                    <Link href={"#photographer"} className="underline-offset-4 hover:underline">
+                    <Link href={"#photographer"} className="underline-offset-4 underline">
                         Photographer
                     </Link>
-                    <Link href={"#travel"} className="underline-offset-4 hover:underline">
+                    <Link href={"#travel"} className="underline-offset-4 underline">
                         Travel Enthusiast
                     </Link>
                 </div>
                 <div className="w-full h-px bg-black mt-17 mb-15"/>
                 <div id="coding" className="w-full text-black mb-2">
                     <div className="grid grid-cols-1 sm:grid-cols-12 py-5 mt-12">
-                        <div className="col-span-6 text-center sm:text-left mt-0"> 
+                        <div className="col-span-6 sm:text-left mt-0"> 
                             <Image src="/Pic04.png" className="w-full h-auto object-cover" width={1000} height={1000} alt="AboutSection image"/>  
-                            <h2 className="text-7xl font-extrabold mb-6 mt-10 sm:mt-20 underline decoration-2 underline-offset-6">Coding</h2>
+                            <h2 className="md:text-7xl text-5xl text-center font-extrabold mb-6 mt-10 sm:mt-20 underline decoration-2 underline-offset-6">Coding</h2>
                             <p className="lg:text-lg mb-7 mt-10 sm:mt-15 lg:leading-8.5 body-font">
                                 During University, I participated in multiple group assignments.
                                 I particularly enjoyed courses like Machine Learning, Web Development, and Human Computer Interface.
@@ -52,13 +51,13 @@ const MoreAboutPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-px bg-black mt-17 mb-15"/>
+                <div className="w-full h-px bg-black md:mt-17 mt-6 mb-15"/>
                 <div id="photographer" className="w-full text-black mt-7 mb-2">
                     <div className="grid grid-cols-1 sm:grid-cols-12 py-5 mt-12">
-                        <div className="col-span-6 text-center sm:text-left mt-0"> 
+                        <div className="col-span-6 sm:text-left mt-0"> 
                             <Image src="/Pic06.jpg" className="w-full h-auto object-cover" width={1000} height={1000} alt="AboutSection image"/>  
-                            <h2 className="text-7xl font-extrabold mb-6 mt-10 sm:mt-20 underline decoration-2 underline-offset-6 break-words">Photographer</h2>
-                            <p className="lg:text-lg mb-7 mt-10 sm:mt-15 lg:leading-8.5">
+                            <h2 className="md:text-7xl text-5xl text-center font-extrabold mb-6 mt-10 sm:mt-20 underline decoration-2 underline-offset-6 break-words">Photographer</h2>
+                            <p className="lg:text-lg md:mb-7 mb-10 mt-10 sm:mt-15 lg:leading-8.5">
                                 Whenever I travel, I always bring a camera with me. I think that although the most beautiful scenery is what we see with our eyes, photos make us remember the journey we have taken.
                                 In this era of advanced information technology, I can pass these beautiful scenery to my family so that they can also enjoy the beauty of this world.
                                 <br></br>
@@ -83,7 +82,7 @@ const MoreAboutPage = () => {
                         </div>
                         {/* Spacer Column */}
                         <div className="col-span-1 hidden sm:block" />
-                        <div className="col-span-5 place-self-center mb-6">
+                        <div className="col-span-5 place-self-center mb-6 md:mt-0 mt-10">
                             <Image src="/Pic08.jpg" className="w-auto h-full object-contain" width={1000} height={1000} alt="AboutSection image"/>  
                         </div>
                     </div>
@@ -96,9 +95,9 @@ const MoreAboutPage = () => {
                 <div className="w-full h-px bg-black mt-17 mb-15"/>
                 <div id="travel" className="w-full text-black mt-7 mb-2">
                     <div className="grid grid-cols-1 sm:grid-cols-12 py-5 mt-12">
-                        <div className="col-span-6 text-center sm:text-left mt-0"> 
+                        <div className="col-span-6 sm:text-left mt-0"> 
                             <Image src="/Travel01.jpg" className="w-full h-auto object-cover" width={1000} height={1000} alt="AboutSection image"/>  
-                            <h2 className="text-7xl font-extrabold mb-6 mt-10 sm:mt-20 underline decoration-2 underline-offset-6 break-words">Travel Enthusiast</h2>
+                            <h2 className="md:text-7xl text-5xl text-center font-extrabold mb-6 mt-10 sm:mt-20 underline decoration-2 underline-offset-6 break-words">Travel Enthusiast</h2>
                             <p className="lg:text-lg mb-7 mt-10 sm:mt-15 lg:leading-8.5">
                                 While you are still young, the world is at your feet, and your steps never stop!
                                 <br></br>
@@ -119,7 +118,7 @@ const MoreAboutPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-px bg-black mt-7 mb-2"/>
+            <div className="relative min-h-[25px]"></div>
         </section>
     )
 }

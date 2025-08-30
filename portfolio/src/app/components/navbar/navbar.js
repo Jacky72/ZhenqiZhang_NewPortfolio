@@ -40,10 +40,8 @@ const navLinks = [
 const Navbar = () => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false)
     const [progress, setProgress] = useState(0);
     const [openDropdown, setOpenDropdown] = useState(null);
-    const scrollVal = 450;
     const pathname = usePathname();
     const isHome = pathname === "/";
 
@@ -52,17 +50,10 @@ const Navbar = () => {
             const y = window.scrollY;
             const { scrollHeight, clientHeight } = document.documentElement;
             const total = Math.max(1, scrollHeight - clientHeight);
-            if (!isHome) {
-                setScrolled(true)
-            } else {
-                setScrolled(y > scrollVal);
-            }
             setProgress((y / total) * 100);
         };
-        window.addEventListener("scroll", handleScroll, { passive: true });
         window.addEventListener("resize", handleScroll);
         return () => {
-            window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("resize", handleScroll);
         };
     }, [isHome]);
@@ -70,7 +61,6 @@ const Navbar = () => {
     {/* This useEffect is to make sure that the Navbar is closed when we enlarge the webpage from small width to wide width */}
     useEffect(() => {
         {/* Small screen width = 768 Large screen width = 1080, 1600, 1800 ... Based on different resolution */}
-        setScrolled(!isHome);
         const handleResize = () => {
             {/* If detected that the screen width is larger than 768, hide the button and display the NavBar */}
             if (window.innerWidth >= 768) {
@@ -98,9 +88,9 @@ const Navbar = () => {
                 <div className="mobile-menu block md:hidden">  {/* Hide the NavBar for small screens */}
                 {
                     !navbarOpen ? (
-                    <button onClick={() => setNavbarOpen(true)} className={`flex item-center px-3 py-2 border-2 rounded ${scrolled ? "border-[#ac8c04] text-[#ac8c04] hover:text-[#ac8c04] hover:border-[#ac8c04]": "border-slate-200 text-slate-200 hover:text-white hover:border-white"}`}><Bars3Icon className="h-5 w-5"/></button>
+                    <button onClick={() => setNavbarOpen(true)} className="flex item-center px-3 py-2 border-2 rounded border-black text-black"><Bars3Icon className="h-5 w-5"/></button>
                     ) : (
-                    <button onClick={() => setNavbarOpen(false)} className={`flex item-center px-3 py-2 border-2 rounded ${scrolled ? "border-[#ac8c04] text-[#ac8c04] hover:text-[#ac8c04] hover:border-[#ac8c04]": "border-slate-200 text-slate-200 hover:text-white hover:border-white"}`}><XMarkIcon className="h-5 w-5"/></button>
+                    <button onClick={() => setNavbarOpen(false)} className="flex item-center px-3 py-2 border-2 rounded border-black text-black"><XMarkIcon className="h-5 w-5"/></button>
                     )
                 }
                 </div>
@@ -123,7 +113,7 @@ const Navbar = () => {
                                     `}
                                     >
                                     {link.children.map((child) => (
-                                        <Link key={child.title} href={child.path} className={`block px-3 py-2 ${scrolled ? "hover:bg-black/5" : "hover:bg-[#f8f4ec]/9"}`}>
+                                        <Link key={child.title} href={child.path} className="block px-3 py-2 hover:bg-[#f8f4ec]/9">
                                         {child.title}
                                         </Link>
                                     ))}
@@ -142,7 +132,6 @@ const Navbar = () => {
             {navbarOpen ? (
                 <OpenMenu
                     links={navLinks}
-                    scrolled={scrolled}
                     onNavigate={() => setNavbarOpen(false)}
                 />
             ) : null}

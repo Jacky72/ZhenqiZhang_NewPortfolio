@@ -3,7 +3,6 @@ import React, {useTransition, useState} from 'react';
 import Image from 'next/image';
 import StatusSection from '../components/status/currentstatus';
 import TabButton from '../components/tabbutton/tabbutton';
-import Footer from '../components/footer/footer';
 
 const TAB_DATA = [
     {
@@ -61,8 +60,8 @@ const IntroPage = () => {
 
     return (
         <section className="min-h-screen bg-[#F4D6B9]">
-            <div className="px-25">
-                <div className="relative min-h-[80px] md:min-h-[110px]"></div>
+            <div className="md:px-25 px-15">
+                <div className="relative min-h-[100px] md:min-h-[120px]"></div>
                 <div className="grid grid-cols-1 sm:grid-cols-12">
                     {/* 8 Col for the Intro */}
                     <div className="col-span-8 place-self-center text-center sm:text-left">
@@ -72,11 +71,11 @@ const IntroPage = () => {
                             </span>
                             <br></br>
                             <span className="text-black">
-                                <span>Zhenqi Zhang</span>
+                                Zhenqi Zhang
                             </span>
                             <br></br>
                             <span className="text-black">
-                                <span>Jacky</span>
+                                Jacky
                             </span>
                         </h1>
                         {/* The most common text colors are: #323232 #646464 #999999, but the color would be too dark if I use any of these */}
@@ -88,7 +87,7 @@ const IntroPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="border-2 border-gray-400 rounded-2xl px-6 mt-12 py-7 shadow-lg max-w-5xl mx-auto">
+                <div className="border-2 border-gray-400 rounded-2xl px-6 md:mt-20 mt-15 py-7 shadow-lg max-w-5xl mx-auto">
                     <p className=" text-black text-center body-font sm:text-lg lg:text-xl lg:leading-8.5">
                         I am a graduate who aspires to become a software engineer or computer scientist.
                         <br></br>
@@ -102,14 +101,14 @@ const IntroPage = () => {
                 <div className="md:grid md:grid-cols-2 gap-8 place-items-center py-8 px-4 xl:gap-16 xl:px-0">
                     <Image src={TAB_DATA.find((t) => t.id === tab).imgurl} width={500} height={500} alt="AboutSection image"/>
                     <div className="max-w-2xl">
-                        <h2 className="text-4xl font-bold text-black mb-6 mt-5">About Me</h2>
-                        <p className="text-black lg:text-lg body-font">
+                        <h2 className="text-4xl md:text-left text-center font-bold text-black mb-6 md:mt-5 mt-15">About Me</h2>
+                        <p className="text-black lg:text-lg body-font md:mt-0 mt-10">
                             I am a <strong>Computer Science graduate</strong> specializing in Machine Learning, Full-Stack Development, Data Science and Software Development. With sufficient skill in Python, Java, Node.js, C, SQL, and system design.
                             My pervious work experience includes using computer vision and reinforcement learning in robotics and drones (AICode Australia). I have done projects ranging from predictive ML models for BLEVE analysis to full-stack Web App like a Availability Enrolment using React, Express.js, and PostgreSQL.
                             I thrive in Agile teams and value iterative, feedback-driven development. As a mentor to 100+ students, I enjoy creating collaborative, inclusive learning environments. Fluent in English and Mandarin, I bring strong cross-cultural communication and leadership to every project.
                             I&apos;m passionate about building impactful, team-driven solutions while mentoring the next generation of developers.
                         </p>
-                        <div className="flex flex-row justify-start mt-8 body-font">
+                        <div className="flex flex-row md:justify-start justify-center md:mt-8 mt-12 body-font">
                             <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>
                                 {" "}
                                 Skills{" "}
@@ -123,13 +122,13 @@ const IntroPage = () => {
                                 Language{" "}
                             </TabButton>
                         </div>
-                        <div className="mt-2 min-h-[150px] text-black">
+                        <div className="md:mt-2 text-center md:text-left mt-5 min-h-[150px] text-black">
                             {TAB_DATA.find((t) => t.id === tab).content}
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="w-full h-px bg-black mt-7 mb-2"/>
+            <div className="relative min-h-[25px]"></div>
         </section>
     )
 }

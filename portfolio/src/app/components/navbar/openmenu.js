@@ -2,15 +2,9 @@
 import React from 'react'
 import Link from "next/link";
 
-const OpenMenu = ({ links, onNavigate = () => {}, scrolled = false }) => {
+const OpenMenu = ({ links, onNavigate = () => {} }) => {
     return (
-        <div
-        className={`md:hidden border-t ${
-            scrolled
-            ? "bg-[#f8f4ec] text-[#141312] border-black/10"
-            : "bg-[#141312] text-white border-white/10"
-        }`}
-        >
+        <div className="md:hidden border-t bg-[#ffbc7c]">
             <ul className="flex flex-col navbar-font py-2">
                 {links.map((link) => (
                 <li key={link.title} className="px-4">
