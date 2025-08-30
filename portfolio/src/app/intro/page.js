@@ -101,7 +101,7 @@ const IntroPage = () => {
                 <div className="w-full h-px bg-black mt-3 mb-10" id="about"/>
                 <div className="md:grid md:grid-cols-2 gap-8 place-items-center py-8 px-4 xl:gap-16 xl:px-0">
                     <Image src={TAB_DATA.find((t) => t.id === tab).imgurl} width={500} height={500} alt="AboutSection image"/>
-                    <div>
+                    <div className="max-w-2xl">
                         <h2 className="text-4xl font-bold text-black mb-6 mt-5">About Me</h2>
                         <p className="text-black lg:text-lg body-font">
                             I am a <strong>Computer Science graduate</strong> specializing in Machine Learning, Full-Stack Development, Data Science and Software Development. With sufficient skill in Python, Java, Node.js, C, SQL, and system design.
