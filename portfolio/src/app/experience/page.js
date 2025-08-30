@@ -1,6 +1,5 @@
 "use client";
 import React, {useTransition, useState} from 'react';
-import Link from 'next/link';
 import Footer from '../components/footer/footer';
 import Image from 'next/image';
 
@@ -66,8 +65,8 @@ const ExperiencePage = () => {
         <section className="min-h-screen bg-[#F4D6B9]">
             <div className="px-25">
                 <div className="relative min-h-[80px] md:min-h-[110px]"></div>
-                <h1 className="text-black mb-10 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal text-center font-extrabold">Work Experience</h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <h1 className="text-black mt-10 mb-10 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal text-center font-extrabold">Work Experience</h1>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-25">
                     {experienceData.map((exp) => (
                         <button
                             key={exp.id}
@@ -122,8 +121,6 @@ const ExperiencePage = () => {
                     </div>
                 </div>
             )}
-            <div className="w-full h-px bg-black mt-7 mb-2"/>
-            <Footer />
         </section>
     )
 }

@@ -129,8 +129,7 @@ const IntroPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-px bg-black mt-7 mb-2" id="about"/>
-            <Footer />
+            <div className="w-full h-px bg-black mt-7 mb-2"/>
         </section>
     )
 }
